@@ -8,6 +8,7 @@ import recruit from '../img/surreal-recruitment-card.png';
 import news from '../img/news4.png';
 import sales from '../img/sales.png';
 import gallery from '../img/sales-gallery.png';
+import Navbar from './Navbar'
 
 class Home extends Component {
   render() {
@@ -19,33 +20,7 @@ class Home extends Component {
       <div className="Header">
       <img className="Header-Img" src={SurrealHeader} alt="Header"></img>
       </div>
-      <div className="Nav-container">
-      <AnchorLink className="nav-h" href="#Home">
-              Home
-            </AnchorLink>
-            <Link to="/members" className="nav-h1">Members</Link>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScaqy9s_8Fand1PvFDMSmn0mHfObhxAk_1GOXKFHhLI0AnoCQ/viewform" 
-            className="nav-h2"
-            target="_blank" 
-            rel="noopener noreferrer"
-            >Recruitment</a>
-            <AnchorLink className="nav-h3" href="#aboutme">
-              Gallery
-            </AnchorLink>
-            <AnchorLink className="nav-h4" href="#contact">
-            Contact Us
-            </AnchorLink>
-            <AnchorLink className="nav-h4" href="#sales">
-            Sales
-            </AnchorLink>
-            <a className="nav-h4" href="https://classic.warcraftlogs.com/guild/us/pagle/surreal" target="_blank" rel="noopener noreferrer">
-              Warcraft Logs
-            </a>
-
-        
-
-
-      </div>
+      <Navbar />
       </div>
       <div className="Landing-Container">
         <div className="recruit-container">
