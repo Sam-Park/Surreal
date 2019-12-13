@@ -22,46 +22,65 @@
   
 }
 
+.App-recruitment {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 1440px;
+  height: 100%;
+  /* max-width: 1180px; */
+  width: 100%;
+  
+}
+
 .additional-h5{
   margin-bottom: 20px;
+  margin-left: 3%;
 }
 
 .recruitment-div {
   display: flex;
+  width: 100%;
+  /* margin-left: 5%; */
+  max-width: 1600px;
+  justify-content: center;
 }
 
-.recruitment-sumbit-button {
-  margin-left: 20% !important;
-}
+
 
 .labels {
   font-size: 1.6rem !important;
 }
 
 .recruitment-character-info {
-  width: 65%;
-  margin-left: 3%;
+  width: 70%;
+  /* margin-left: 3%; */
 }
 
 .recruitment-info {
   width: 45%;
-  margin-left: 30px !important;
+  margin-left: 3%;
 }
 
 .recruitment-checkboxes {
 display: flex;
 align-items: flex-start;
 margin-bottom: 50px;
-margin-left: 30px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+margin-left: 30% !important;
 }
 
 
 .Top-Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 1600px;
+}
+
+.top-container-recruit {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -101,7 +120,7 @@ margin-left: 30px;
   width: 12.5%;
   padding: 12px;
   text-align: center;
-  /* margin-left: 15px; */
+  margin-left: 2px;
   /* margin-bottom: 15px; */
 }
 
@@ -170,7 +189,6 @@ margin-left: 30px;
   display: flex;
   /* margin-left: 5%; */
   position: fixed;
-  z-index: 10;
 }
 
 
@@ -230,3 +248,31 @@ margin-left: 30px;
    padding: 20px;
  }
 
+.sales-container {
+  margin-top: 80px;
+  margin-left: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.sales-h5 {
+  text-decoration: underline;
+}
+
+.sales-p {
+  max-width: 40%;
+  font-size: 1.1rem;
+}
+
+.sales-labels {
+  margin-top: 40px;
+  font-size: 1.4rem !important;
+}
+
+.sales-sumbit-button {
+  margin-left: 40px !important;
+  margin-top: 40px !important;
+}

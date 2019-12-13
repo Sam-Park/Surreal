@@ -5,7 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { FormLabel } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
@@ -44,20 +43,20 @@ class Recruit extends Component {
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value});
         setTimeout(() => {
-            console.log(`State molten core ${this.state.moltenCore} || `, `name ${this.state.name}`, this.state.level)
+            console.log(`State ${this.state}`)
         }, 500);
     }
 
     onClick = (e) => {
         this.setState({ [e.target.name]: e.target.checked });
         setTimeout(() => {
-            console.log(`State molten core ${this.state.moltenCore} || `, `name ${this.state.name}`)
+            console.log(`State ${this.state.name}`)
         }, 500);
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.email, this.state.name);
+        console.log(this.state);
         axios({
             method: 'POST',
             url: 'http://localhost:5000/api/users/recruitment',
@@ -91,10 +90,13 @@ class Recruit extends Component {
       
       
     render() { 
-        return ( 
-            <div  className="recruitment-div">
+        return (
+            <div className="App-recruitment">
 
+            <div className="top-container-recruit">
             <Navbar/>
+                </div>    
+            <div  className="recruitment-div">
             <div className="recruitment-character-info">
                 <br />
                 <br />
@@ -160,6 +162,7 @@ class Recruit extends Component {
                     <Checkbox  onChange={this.onClick} name='ony' checked={this.state.ony} />
                 }
                 label="Onyxia:"
+                className="recruit-checked"
                 labelPlacement="end"
                 />
               
@@ -168,6 +171,7 @@ class Recruit extends Component {
                     <Checkbox  onChange={this.onClick} name='moltenCore' checked={this.state.moltenCore} />
                 }
                 label="Molten Core:"
+                className="recruit-checked"
                 labelPlacement="end"
                 />
                 <FormControlLabel
@@ -175,6 +179,7 @@ class Recruit extends Component {
                     <Checkbox  onChange={this.onClick} name='bwl' checked={this.state.bwl} />
                 }
                 label="Blackwing Lair:"
+                className="recruit-checked"
                 labelPlacement="end"
                 />
                 <FormControlLabel
@@ -182,6 +187,7 @@ class Recruit extends Component {
                     <Checkbox  onChange={this.onClick} name='aq40' checked={this.state.aq40} />
                 }
                 label="AQ 40:"
+                className="recruit-checked"
                 labelPlacement="end"
                 />
                 <FormControlLabel
@@ -189,6 +195,7 @@ class Recruit extends Component {
                     <Checkbox  onChange={this.onClick} name='naxx' checked={this.state.naxx} />
                 }
                 label="Naxx:"
+                className="recruit-checked"
                 labelPlacement="end"
                 />
                 <FormControlLabel
@@ -196,6 +203,7 @@ class Recruit extends Component {
                     <Checkbox  onChange={this.onClick} name='onyAttune' checked={this.state.onyAttune} />
                 }
                 label="Onyxia Attuned:"
+                className="recruit-checked"
                 labelPlacement="end"
                 />
                 </FormGroup>
@@ -285,6 +293,7 @@ class Recruit extends Component {
               <br />
               <br />
             </div>
+                    </div> 
         </div>
          );
     }

@@ -7,10 +7,8 @@ class Navbar extends Component {
     render() { 
         return ( 
             <div className="Nav-container">
-      <AnchorLink className="nav-h" href="#Home">
-              Home
-            </AnchorLink>
-            <Link to="/members" className="nav-h1">Members</Link>
+            <Link to="/" className="nav-h">Home</Link>
+            <Link to="/members" className="nav-h2">Members</Link>
             <Link 
             to="/recruitment"
             className="nav-h2"
@@ -21,9 +19,7 @@ class Navbar extends Component {
             <AnchorLink className="nav-h4" href="#contact">
             Contact Us
             </AnchorLink>
-            <AnchorLink className="nav-h4" href="#sales">
-            Sales
-            </AnchorLink>
+            <Link to="/sales" className="nav-h4">Sales</Link>
             <a className="nav-h4" href="https://classic.warcraftlogs.com/guild/us/pagle/surreal" target="_blank" rel="noopener noreferrer">
               Warcraft Logs
             </a>
