@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import Tilt from 'react-parallax-tilt';
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import '../App.css';
 import SurrealHeader from '../img/Surreal-Header-1440.png';
 import recruit from '../img/surreal-recruitment-card.png';
 import news from '../img/news4.png';
 import sales from '../img/sales.png';
 import gallery from '../img/sales-gallery.png';
 import Navbar from './Navbar'
+import '../App.css';
 
 class Home extends Component {
   render() {

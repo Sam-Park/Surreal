@@ -22,6 +22,39 @@
   
 }
 
+.additional-h5{
+  margin-bottom: 20px;
+}
+
+.recruitment-div {
+  display: flex;
+}
+
+.recruitment-sumbit-button {
+  margin-left: 20% !important;
+}
+
+.labels {
+  font-size: 1.6rem !important;
+}
+
+.recruitment-character-info {
+  width: 65%;
+  margin-left: 3%;
+}
+
+.recruitment-info {
+  width: 45%;
+  margin-left: 30px !important;
+}
+
+.recruitment-checkboxes {
+display: flex;
+align-items: flex-start;
+margin-bottom: 50px;
+margin-left: 30px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -196,3 +229,4 @@
    max-width: 60%;
    padding: 20px;
  }
+
