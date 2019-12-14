@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
 import FormGroup from '@material-ui/core/FormGroup';
-import MenuItem from '@material-ui/core/MenuItem';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { FormLabel } from '@material-ui/core';

@@ -150,7 +150,7 @@ class Recruit extends Component {
                     <br />
                 </form>
                    <br />
-                <FormLabel className="labels" component="legend">Any current or Vanilla raiding experience: </FormLabel>
+                <FormLabel className="labels" component="legend">Raiding Experience: </FormLabel>
                     <br />
                 <div className="recruitment-checkboxes" >
                    <FormControl component="fieldset">
@@ -161,7 +161,7 @@ class Recruit extends Component {
                 control={
                     <Checkbox  onChange={this.onClick} name='ony' checked={this.state.ony} />
                 }
-                label="Onyxia:"
+                label="Onyxia(past or present)"
                 className="recruit-checked"
                 labelPlacement="end"
                 />
@@ -170,7 +170,7 @@ class Recruit extends Component {
                 control={
                     <Checkbox  onChange={this.onClick} name='moltenCore' checked={this.state.moltenCore} />
                 }
-                label="Molten Core:"
+                label="Molten Core(past or present)"
                 className="recruit-checked"
                 labelPlacement="end"
                 />
@@ -178,7 +178,7 @@ class Recruit extends Component {
                 control={
                     <Checkbox  onChange={this.onClick} name='bwl' checked={this.state.bwl} />
                 }
-                label="Blackwing Lair:"
+                label="Blackwing Lair(past)"
                 className="recruit-checked"
                 labelPlacement="end"
                 />
@@ -186,7 +186,7 @@ class Recruit extends Component {
                 control={
                     <Checkbox  onChange={this.onClick} name='aq40' checked={this.state.aq40} />
                 }
-                label="AQ 40:"
+                label="AQ 40(past)"
                 className="recruit-checked"
                 labelPlacement="end"
                 />
@@ -194,7 +194,7 @@ class Recruit extends Component {
                 control={
                     <Checkbox  onChange={this.onClick} name='naxx' checked={this.state.naxx} />
                 }
-                label="Naxx:"
+                label="Naxx(past)"
                 className="recruit-checked"
                 labelPlacement="end"
                 />
@@ -202,7 +202,7 @@ class Recruit extends Component {
                 control={
                     <Checkbox  onChange={this.onClick} name='onyAttune' checked={this.state.onyAttune} />
                 }
-                label="Onyxia Attuned:"
+                label="Onyxia Attuned(present):"
                 className="recruit-checked"
                 labelPlacement="end"
                 />
@@ -278,10 +278,8 @@ class Recruit extends Component {
                     variant="outlined"
                     className="recruitment-info"
                     onChange={this.onChange} />
-                    <br />
-                    <br />
+                    
                 </form>
-                   <br />
                     </FormGroup>
                 <Button className="recruitment-sumbit-button" variant="contained" color="primary" onClick={this.handleSubmit}>
                     Submit
