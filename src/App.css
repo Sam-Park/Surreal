@@ -28,7 +28,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
+  background-color: #f0f0f0;
   min-height: 1440px;
   height: 100%;
   /* max-width: 1180px; */
@@ -45,7 +45,7 @@
   display: flex;
   width: 100%;
   /* margin-left: 5%; */
-  max-width: 1600px;
+  max-width: 1200px;
   justify-content: center;
 }
 
@@ -60,16 +60,27 @@
   /* margin-left: 3%; */
 }
 
+.recruitment-raid-table {
+  max-width:375px;
+  text-align: center !important;
+ }
+
+
+
+
 .recruitment-info {
   width: 45%;
   margin-left: 3%;
+  background-color: white ;
 }
 
 .recruitment-checkboxes {
-display: flex;
-align-items: flex-start;
+
+  /* max-width: 350px; */
+  display: flex;
+justify-content: center;
 margin-bottom: 50px;
-margin-left: 40% !important;
+/* margin-left: 29% !important; */
 }
 
 
@@ -177,7 +188,7 @@ margin-left: 40% !important;
   opacity: 92%;
   background: var(--black);
   justify-content: space-between;
-  max-width: 1440px;
+  max-width: 100%;
   height: 56px;
   width: 100%;
   /* margin-top:10px; */
@@ -189,6 +200,7 @@ margin-left: 40% !important;
   display: flex;
   /* margin-left: 5%; */
   position: fixed;
+  z-index: 1;
 }
 
 
@@ -202,12 +214,14 @@ margin-left: 40% !important;
 
  }
 
+
  .recruit-container {
    /* max-width: 360px; */
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
-   z-index: 1;
+   z-index: 0;
+   /* margin-top: 30px */
  }
  .recruit-card {
    max-width: 360px;
@@ -215,7 +229,7 @@ margin-left: 40% !important;
  }
 
  .Recruitment-Image {
-   max-width: 360px;
+   max-width: 260px;
    border: 1px solid var(--gold);
    /* align-self: flex-end; */
  }
@@ -225,9 +239,16 @@ margin-left: 40% !important;
    /* border: 1px solid var(--gold); */
  }
 
- .news-img {
-  margin-bottom: 40px;
-   max-height: 40px;
+ .news-post-img {
+   margin-bottom: 40px;
+   max-width: 800px;
+   transition: -webkit-transform 0.25s ease;
+   transition: transform 0.25s ease;
+ }
+
+ .news-post-img:active {
+  -webkit-transform: scale(2);
+  transform: scale(2);
  }
 
  .news-post {
@@ -238,41 +259,129 @@ margin-left: 40% !important;
 
  .news-post-h {
   color: white;
-  max-width: 40%;
+  max-width: 55%;
+  margin: 10px, 0px, 10px, 0px;
+ }
+
+ .news-post-a {
+   color: white;
+   margin-top: 0px;
+   margin-bottom: 0px;
  }
 
  .news-post-p {
    color: white;
    font-size: 1.3rem;
-   max-width: 60%;
+   max-width: 53.7%;
    padding: 20px;
+ }
+
+ .sales-arch-container {
+background-color: #f0f0f0;
  }
 
 .sales-container {
   margin-top: 80px;
   margin-left: 5%;
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+}
+
+.sales-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+
+.sales-info-items {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 900px;
+  margin-left: 10%; 
+  margin-right: 10%; 
+}
+.sales-info-mc {
+  width:50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sales-info-ony {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+
 }
 
 
-.sales-h5 {
+.sales-h3 {
+  font-size: 1.6rem;
+  text-align: center;
   text-decoration: underline;
 }
 
+.sales-h5 {
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
 .sales-p {
-  max-width: 40%;
+  width: 90%;
   font-size: 1.1rem;
+  max-width: 850px;
 }
 
 .sales-labels {
   margin-top: 40px;
+  margin-bottom: 20px;
   font-size: 1.4rem !important;
+  text-align: center;
 }
 
-.sales-sumbit-button {
-  margin-left: 40px !important;
-  margin-top: 40px !important;
+.sales-earth-cen {
+  width: 60%;
+  max-width: 850px;
+  background-color: white;
+}
+
+.sales-select-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 73%
+}
+
+.sales-mc-table {
+  width: 400px !important;
+}
+
+.news-post-top-container {
+  display: flex;
+  min-width: 700px;
+  width: 100%;
+  justify-content: center;
+}
+.news-post-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+}
+.news-post-form-label {
+font-size: 1.6rem !important;
+}
+
+.news-post-form-group {
+  width: 100%;
+}
+.news-post-button {
+  width: 25%;
+  height: 40px;
+  margin-left: 38% !important;
 }

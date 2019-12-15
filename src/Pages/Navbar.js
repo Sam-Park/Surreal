@@ -9,22 +9,14 @@ class Navbar extends Component {
             <div className="Nav-container">
             <Link to="/" className="nav-h">Home</Link>
             <Link to="/members" className="nav-h2">Members</Link>
-            <Link 
-            to="/recruitment"
-            className="nav-h2"
-            >Recruitment</Link>
-            <AnchorLink className="nav-h3" href="#aboutme">
-              Gallery
-            </AnchorLink>
-            <AnchorLink className="nav-h4" href="#contact">
-            Contact Us
-            </AnchorLink>
+            <Link to="/recruitment" className="nav-h2">Recruitment</Link>
+            {/* <Link to="/news" className="nav-h2">News</Link> */}
+            <Link to="/contact" className="nav-h2">Contact Us</Link>
             <Link to="/sales" className="nav-h4">Sales</Link>
             <a className="nav-h4" href="https://classic.warcraftlogs.com/guild/us/pagle/surreal" target="_blank" rel="noopener noreferrer">
               Warcraft Logs
             </a>
-            <Link to="/register" className="nav-h4">Register</Link>
-            <Link to="/login" className="nav-h4">Login</Link>
+           
 
         
 

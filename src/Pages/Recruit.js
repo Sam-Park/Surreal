@@ -9,9 +9,27 @@ import { FormLabel } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import Navbar from './Navbar'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import '../App.css';
 
+function createData(raid, name) {
+    return {raid, name};
+  }
 
+  const rows = [
+    createData(`Onyxia(past or present)`, 'ony'),
+    createData(`Molten Core(past or present)`, 'moltenCore'),
+    createData(`Blackwing Lair(past)`, 'bwl'),
+    createData(`AQ 40(past)`, 'aq40'),
+    createData(`Naxx(past)`, 'naxx'),
+    createData(`Onyxia Attuned(present)`, 'onyAttune'),
+]
 
 
 
@@ -148,68 +166,39 @@ class Recruit extends Component {
                     onChange={this.onChange} />
                     <br />
                     <br />
-                </form>
                    <br />
                 <FormLabel className="labels" component="legend">Raiding Experience: </FormLabel>
                     <br />
                 <div className="recruitment-checkboxes" >
-                   <FormControl component="fieldset">
+                <TableContainer component={Paper} className="recruitment-raid-table">
+                    <Table  size="small" aria-label="Raids">
+                        <TableHead>
+                        <TableRow>
+                        <TableCell padding="checkbox">
+                        
+                        </TableCell>
+                            <TableCell className="recruit-tablecell-head"> &nbsp;</TableCell>
+                        </TableRow>
+                        </TableHead>
 
-               <FormGroup onSubmit={this.handleSubmit}>
-                   {/* <FormLabel component="legend">Any current or Vanilla raiding experience? </FormLabel> */}
-                <FormControlLabel
-                control={
-                    <Checkbox  onChange={this.onClick} name='ony' checked={this.state.ony} />
-                }
-                label="Onyxia(past or present)"
-                className="recruit-checked"
-                labelPlacement="end"
-                />
-              
-                <FormControlLabel
-                control={
-                    <Checkbox  onChange={this.onClick} name='moltenCore' checked={this.state.moltenCore} />
-                }
-                label="Molten Core(past or present)"
-                className="recruit-checked"
-                labelPlacement="end"
-                />
-                <FormControlLabel
-                control={
-                    <Checkbox  onChange={this.onClick} name='bwl' checked={this.state.bwl} />
-                }
-                label="Blackwing Lair(past)"
-                className="recruit-checked"
-                labelPlacement="end"
-                />
-                <FormControlLabel
-                control={
-                    <Checkbox  onChange={this.onClick} name='aq40' checked={this.state.aq40} />
-                }
-                label="AQ 40(past)"
-                className="recruit-checked"
-                labelPlacement="end"
-                />
-                <FormControlLabel
-                control={
-                    <Checkbox  onChange={this.onClick} name='naxx' checked={this.state.naxx} />
-                }
-                label="Naxx(past)"
-                className="recruit-checked"
-                labelPlacement="end"
-                />
-                <FormControlLabel
-                control={
-                    <Checkbox  onChange={this.onClick} name='onyAttune' checked={this.state.onyAttune} />
-                }
-                label="Onyxia Attuned(present):"
-                className="recruit-checked"
-                labelPlacement="end"
-                />
-                </FormGroup>
-                </FormControl>
+                        <TableBody>
+                        {rows.map(row => (
+                            <TableRow key={row.item}>
+                                <Checkbox
+                                name={row.name}
+                                onClick={this.onClick}
+                                />
+                            <TableCell component="th" scope="row">
+                                {row.raid}
+                            </TableCell>
+                            </TableRow>
+                        ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
                 
                 </div>
+                        </form>
                 <FormLabel className="labels" component="legend">Additional Information:</FormLabel>
                     <br />
                 <form  onSubmit={this.onChange}>
@@ -281,7 +270,7 @@ class Recruit extends Component {
                     
                 </form>
                     </FormGroup>
-                <Button className="recruitment-sumbit-button" variant="contained" color="primary" onClick={this.handleSubmit}>
+                <Button className="recruitment-sumbit-button" variant="contained" color="secondary" onClick={this.handleSubmit}>
                     Submit
                 </Button>
               <br />

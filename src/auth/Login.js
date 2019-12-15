@@ -1,26 +1,43 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
-      password: "",
-      errors: {}
+      email: '',
+      password: '',
+      errorMessage: '',
     };
   }
 onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
+
 onSubmit = e => {
     e.preventDefault();
-const userData = {
+     //check the username are not empty
+     
+    // ready to sign in
+    const user = {
       email: this.state.email,
       password: this.state.password
     };
-console.log(userData);
+
+    console.log("state", this.state.email)
+    axios
+      .post(`http://localhost:5000/api/users/login`, user)
+      .then((response) => {
+        localStorage.setItem('token', response.data.token);
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({ errorMessage: 'Username or Password is Incorrect' });
+      })
   };
 render() {
+  console.log("email", this.state.email, "password", this.state.password)
     const errors = this.state.errors;
 return (
       <div className="container">
@@ -43,8 +60,8 @@ return (
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
-                  error={errors.email}
-                  id="email"
+                  error={this.state.errorMessage.email}
+                  name="email"
                   type="email"
                 />
                 <label htmlFor="email">Email</label>
@@ -53,8 +70,8 @@ return (
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
-                  error={errors.password}
-                  id="password"
+                  error={this.state.errorMessage.password}
+                  name="password"
                   type="password"
                 />
                 <label htmlFor="password">Password</label>
@@ -68,7 +85,8 @@ return (
                     marginTop: "1rem"
                   }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                  onClick={this.onSubmit}
+                  className=""
                 >
                   Login
                 </button>

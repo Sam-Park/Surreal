@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 class Register extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            name: "",
-            email: "",
-            password: "",
-            password2: "",
+            name: '',
+            email: '',
+            password: '',
+            password2: '',
             errors: {}
          };
     }
@@ -25,7 +26,18 @@ class Register extends Component {
           password: this.state.password,
           password2: this.state.password2
         };
-        console.log(newUser);
+        axios
+          .post(`http://localhost:5000/api/users/register`, newUser)
+          .then((res) => {
+            this.setState({
+              name: '',
+              email: '',
+              password: '',
+              password2: '',
+              errors: {}
+            })
+          })
+          .catch((err) => {(console.log(err))})
     };
 
     render() { 
