@@ -195,6 +195,8 @@ class Home extends Component {
                     <p className="news-post-p">{post.body}</p>
               <img className="news-post-img"src={post.img}></img>
                   <br />
+                  <br />
+                  <br />
                   
                   </div>
                             )

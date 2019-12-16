@@ -120,7 +120,7 @@ import '../App.css';
                     </div>
                     <div className="sales-select-items">
                 <h5 className="sales-h5">We need your Battle.net name so we can contact you</h5>
-                <br />
+
                 <TextField  
                     label="Battle.net Name" 
                     name="bnet" 
@@ -196,26 +196,31 @@ import '../App.css';
                 
                     <br />
                 <div className="sales-select-items" >
-                   
+                            {this.state.earthfury ? <div className="sales-select-items">
+
                     <FormLabel className="sales-labels" component="legend">Earthfury Items </FormLabel>
                     
                     <TextField  
-                    label="Specific Earthfury Item" 
+                    label="Specific Earthfury Item(s)" 
                     name="earthfury" 
                     variant="outlined"
                     onChange={this.onChange}
                     className="sales-earth-cen"
                     />
-
+                    
+                            </div> : null}
+                    
+                    {this.state.cenarion ? <div className="sales-select-items"> 
                     <FormLabel className="sales-labels" component="legend">Cenarion Items </FormLabel>
                     
                     <TextField  
-                    label="Specific Cenarion Item" 
+                    label="Specific Cenarion Item(s)" 
                     name="cenarion" 
                     variant="outlined"
                     onChange={this.onChange}
                     className="sales-earth-cen"
                     />
+                    </div> : null}
                     <br />
                 <br />
                 <br />
