@@ -41,12 +41,55 @@
   margin-left: 3%;
 }
 
+.App-landing {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--black);
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top center;
+
+  min-height: 1440px;
+  height: 100%;
+  /* max-width: 1180px; */
+  width: 100%;
+}
+
+.landing-arch-container {
+  min-height: 1920px;
+  max-width: 1920px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.landing-img-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  max-height: 900px;
+  border-bottom: 2px solid var(--gold);
+}
+/* .landing-right-recruit {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+ 
+  max-height: 900px;
+} */
+
 .recruitment-div {
   display: flex;
   width: 100%;
   /* margin-left: 5%; */
   max-width: 1200px;
-  justify-content: center;
+  justify-self: center;
 }
 
 

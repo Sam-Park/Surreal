@@ -65,7 +65,6 @@ class Home extends Component {
       <div className="Landing-Container">
 
         <div className="recruit-container">
-        <Paper>
 
         <div className="recruit-card">
           
@@ -92,7 +91,6 @@ class Home extends Component {
             >
           </img>
         </div>
-      </Paper>
         </div>
           <div className="news-container">
             
