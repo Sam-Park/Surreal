@@ -41,7 +41,6 @@ class Register extends Component {
     };
 
     render() { 
-        const errors = this.state.erorrs;
         return ( 
         <div className="container">
         <div className="row">

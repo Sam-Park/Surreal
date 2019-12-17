@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
 import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { FormLabel } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
 import Navbar from './Navbar'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -16,6 +13,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close'
 import '../App.css';
 
 function createData(raid, name) {
@@ -53,10 +53,25 @@ class Recruit extends Component {
             screenShot: '',
             reason: '',
             more: '',
-            dropdownOpen: false,
+            open: false,
+            openFailedSubmit: false,
          }
     }
 
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        this.setState({ open: false });
+      };
+    handleCloseFailedSubmit = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        this.setState({ openFailedSubmit: false });
+      };
 
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value});
@@ -74,10 +89,17 @@ class Recruit extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        if (this.state.name === '' || this.state.level === ''
+            || this.state.classRace === '' || this.state.classRace === ''
+            || this.state.raidTime === ''
+            ) {
+            this.setState({ openFailedSubmit: !this.openFailedSubmit })
+            return;
+        }
         console.log(this.state);
         axios({
             method: 'POST',
-            url: 'http://localhost:5000/api/users/recruitment',
+            url: `${process.env.REACT_APP_SERVER_URL}api/users/recruitment`,
             data: {
             name: this.state.name,
             level: this.state.level,
@@ -97,12 +119,12 @@ class Recruit extends Component {
             more: this.state.more,
             }
         })
-        .then()
+        .then( this.setState({ open: !this.state.open }))
         .catch((error) => {
             console.log("ERROR", error)
         })
-        window.location.reload();
-        window.scrollTo(0, 0);
+        // window.location.reload();
+        // window.scrollTo(0, 0);
     }
         
       
@@ -273,6 +295,48 @@ class Recruit extends Component {
                 <Button className="recruitment-sumbit-button" variant="contained" color="secondary" onClick={this.handleSubmit}>
                     Submit
                 </Button>
+                <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        open={this.state.open}
+        autoHideDuration={6000}
+        onClose={this.handleClose}
+        message={<span id="message-id">Your Application has been recieved</span>}
+        action={[
+          <IconButton
+            key="close"
+            aria-label="close"
+            color="inherit"
+            
+            onClick={this.handleClose}
+          >
+            <CloseIcon />
+          </IconButton>,
+        ]}
+      />
+       <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        open={this.state.openFailedSubmit}
+        autoHideDuration={6000}
+        onClose={this.handleCloseFailedSubmit}
+        message={<span id="message-id">Please complete the Application</span>}
+        action={[
+          <IconButton
+            key="close"
+            aria-label="close"
+            color="inherit"
+            
+            onClick={this.handleCloseFailedSubmit}
+          >
+            <CloseIcon />
+          </IconButton>,
+        ]}
+      />
               <br />
               <br />
               <br />

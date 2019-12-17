@@ -11,6 +11,7 @@ import Gallery from './Pages/Gallery';
 import Contact from './Pages/Contact';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+
 class App extends Component {
     state = {  
         news: null,

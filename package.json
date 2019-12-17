@@ -12,6 +12,7 @@
     "bootstrap": "^4.4.1",
     "dotenv": "^8.2.0",
     "eslint": "^6.7.2",
+    "gsap": "^3.0.4",
     "jwt-decode": "^2.2.0",
     "material-ui": "^0.20.2",
     "nodemailer": "^6.4.2",

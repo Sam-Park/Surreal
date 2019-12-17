@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
 import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { FormLabel } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
@@ -59,6 +57,9 @@ class NewsPost extends Component {
     render() { 
         return (
             <div>
+                <div>
+                    <Navbar />
+                </div>
                 <div className="sales-top-container">
                     <Navbar></Navbar>
 

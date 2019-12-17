@@ -38,7 +38,6 @@ onSubmit = e => {
   };
 render() {
   console.log("email", this.state.email, "password", this.state.password)
-    const errors = this.state.errors;
 return (
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">

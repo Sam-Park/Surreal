@@ -7,8 +7,13 @@ import news from '../img/news4.png';
 import sales from '../img/sales.png';
 import gallery from '../img/sales-gallery.png';
 import Navbar from './Navbar'
-import '../App.css';
 import axios from 'axios';
+import Paper from '@material-ui/core/Paper';
+import '../App.css';
+
+
+
+
 
 class Home extends Component {
   constructor(props) {
@@ -25,9 +30,11 @@ class Home extends Component {
     
     
   }
+
+
   componentDidMount() {
     axios
-     .get(`http://localhost:5000/api/users/thenews`)
+     .get(`${process.env.REACT_APP_SERVER_URL}api/users/thenews`)
      .then(response => {
          const newz = response.data
        this.setState({ news: newz, loading: false });
@@ -40,6 +47,7 @@ class Home extends Component {
 };
   
   
+
   render() {
     console.log("render props", this.props.newz)
     console.log("loading", this.state.loading)
@@ -55,7 +63,10 @@ class Home extends Component {
       <Navbar />
       </div>
       <div className="Landing-Container">
+
         <div className="recruit-container">
+        <Paper>
+
         <div className="recruit-card">
           
           <img 
@@ -81,6 +92,7 @@ class Home extends Component {
             >
           </img>
         </div>
+      </Paper>
         </div>
           <div className="news-container">
             
@@ -93,7 +105,7 @@ class Home extends Component {
         </div>
       )
     } else {
-
+      
       return (
         <div className="App">
       <div className="Top-Container" id="Home">
@@ -105,7 +117,6 @@ class Home extends Component {
       </div>
       <div className="Landing-Container">
         <div className="recruit-container">
-         
         <div className="recruit-card">
           <Link to="/recruitment">
 
@@ -157,7 +168,7 @@ class Home extends Component {
                 <a href="" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                >
+                  >
                   <Tilt
                   tiltMaxAngleX={3}
                   tiltMaxAngleY={3}
@@ -176,6 +187,7 @@ class Home extends Component {
                     </div>
                   </Tilt> 
                 </a>
+
                     </div>  
           
 
@@ -183,25 +195,23 @@ class Home extends Component {
           <div className="news-container">
             <img className="news-img" alt="news image" src={news}>
             </img>
-            
-       
                     {this.state.news.slice(0, 3).map((post) =>{
-                        return (
-
-                    <div className="news-post" key={post.date}>
+                      return (
+                        
+                        <div className="news-post" key={post.date}>
     
                   <h1 className="news-post-h">{post.title}</h1>
                   <p className="news-post-a">Author: {post.author}</p>
                     <p className="news-post-p">{post.body}</p>
-              <img className="news-post-img"src={post.img}></img>
+              <img target="_blank" className="news-post-img"src={post.img}></img>
                   <br />
                   <br />
                   <br />
                   
                   </div>
                             )
-}
-  )}
+                          }
+                          )}
 
             </div>
           </div>

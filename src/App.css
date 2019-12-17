@@ -185,24 +185,54 @@ margin-bottom: 50px;
 }
 
 .Nav-container {
-  opacity: 92%;
-  background: var(--black);
-  justify-content: space-between;
-  max-width: 100%;
-  height: 56px;
+  display: flex;
+  position: fixed;
+  z-index: 1;
   width: 100%;
+  opacity: 92%;
+  
+  padding-bottom: 0px;
   /* margin-top:10px; */
-   border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
+  /* margin-left: 5%; */
+  justify-content: center;
+  background: var(--black);
+  /* border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold); */
+  height: 56px;
+  position: fixed;
+}
+
+.nav-link-box {
+  /* margin-left: 12%; */
+  display: flex;
+  max-width: 1440px;
+  width: 1440px;
+  /* flex-direction: row; */
+  justify-self: center;
+  /* margin-top:10px; */
   /* padding-top: 10px; */
   padding-bottom: 0px;
   /* padding-bottom: 10px; */
-  display: flex;
   /* margin-left: 5%; */
-  position: fixed;
-  z-index: 1;
 }
 
+
+.nav-discord-logo {
+  /* display: flex; */
+  /* align-self: 14center; */
+  width: 35px;
+  height: 35px;
+  /* margin-left: 7%; */
+}
+.nav-discord-logo-a {
+  justify-content: flex-end;
+  display: flex;
+  align-self: center;
+  width:10%;
+  
+}
 
  .Landing-Container {
    margin-top: 50px;
@@ -247,9 +277,9 @@ margin-bottom: 50px;
    transition: transform 0.25s ease;
  }
 
- .news-img {
-   border: 5px solid white;
- }
+ /* .news-img {
+   border-bottom: 5px solid white;
+ } */
 
  .news-post-img:active {
   -webkit-transform: scale(2);

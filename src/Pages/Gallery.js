@@ -46,7 +46,7 @@ class Gallery extends Component {
                   <div>
                   <h1 >{post.title}</h1>
                     <p >{post.body}</p>
-              <img src={post.img}></img>
+              <img alt="post image" src={post.img}></img>
                   <br />
                   <br />
                   <br />
