@@ -8,6 +8,7 @@ import sales from '../img/sales.png';
 import gallery from '../img/sales-gallery.png';
 import Navbar from './Navbar'
 import axios from 'axios';
+import Logs from '../img/logs.png'
 import Paper from '@material-ui/core/Paper';
 import '../App.css';
 
@@ -84,12 +85,17 @@ class Home extends Component {
             </img>
         </div>
         <div>
+          <a href="https://classic.warcraftlogs.com/guild/us/pagle/surreal" 
+            >
             <img 
             alt="Recruitment Card"
             className="Recruitment-Image"
-            src={gallery}
+            target="_blank" 
+            rel="noopener noreferrer"
+            src={Logs}
             >
           </img>
+          </a>
         </div>
         </div>
           <div className="news-container">
@@ -163,7 +169,7 @@ class Home extends Component {
                   </div> 
 
                <div className="recruit-card">
-                <a href="" 
+                <a href="https://classic.warcraftlogs.com/guild/us/pagle/surreal" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   >
@@ -179,7 +185,7 @@ class Home extends Component {
                       <img 
                       alt="Recruitment Card"
                       className="Recruitment-Image"
-                      src={gallery}
+                      src={Logs}
                       >
                       </img>
                     </div>

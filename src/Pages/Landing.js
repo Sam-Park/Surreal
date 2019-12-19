@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import Siege from "../img/landing-page-left.png";
+import Button from '@material-ui/core/Button';
 import Treasure from "../img/landing-page-right.png"
 import '../App.css';
+
 
 class Landing extends Component {
     constructor(props) {
@@ -13,12 +15,24 @@ class Landing extends Component {
         return ( 
             <div className="App-landing"> 
 
-            <div className="Top-Container">
+            <div >
 
             <div className="landing-arch-container">
                 <div className="landing-img-container">
-                    <img src={Siege}></img>
-                    <img src={Treasure}></img>
+                    <div className="landing-inner">
+                        <div className="landing-inner-left">
+
+                    <Link style={{ textDecoration: "none"}}to="/recruitment">
+                    <button  className="left-button" >Join Us</button>
+                    </Link>
+                    <Link style={{ textDecoration: "none"}}to="/recruitment">
+                    <button  className="right-button" >Join Us</button>
+                    </Link>
+                        </div>
+                    </div>
+                    <img className="landing-left-img" src={Siege}></img>
+                    
+                    <img className="landing-right-img" src={Treasure}></img>
                 </div>
                 <div className="landing-bottom-home"></div>
             </div>

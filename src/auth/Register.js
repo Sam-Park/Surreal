@@ -27,7 +27,7 @@ class Register extends Component {
           password2: this.state.password2
         };
         axios
-          .post(`http://localhost:5000/api/users/register`, newUser)
+          .post(`${process.env.REACT_APP_SERVER_URL}api/users/register`, newUser)
           .then((res) => {
             this.setState({
               name: '',

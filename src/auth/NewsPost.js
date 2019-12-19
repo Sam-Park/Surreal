@@ -24,8 +24,11 @@ class NewsPost extends Component {
         { cloud_name: 'surreal-pagle', upload_preset: 'ogbp2qff', cors: 'no-cors' },
 
       (error, result) => {
-          console.log("result", result)
-          this.setState({ img: result[0].url})
+          if (result !== undefined) {
+              this.setState({ img: result[0].url})
+          } else {
+              return;
+          }
           console.log(error)
         },
     )
@@ -39,7 +42,7 @@ class NewsPost extends Component {
     newPost = (e) => {
         axios({
             method: 'POST',
-            url: 'http://localhost:5000/api/users/news',
+            url: `${process.env.REACT_APP_SERVER_URL}api/users/news`,
             data: {
                 title: this.state.title,
                 author: this.state.author,

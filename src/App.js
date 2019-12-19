@@ -9,9 +9,11 @@ import Sales from "./Pages/Sales";
 import NewsPost from './auth/NewsPost';
 import Gallery from './Pages/Gallery';
 import Contact from './Pages/Contact';
-import Landing from './Pages/Landing';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+const ScrollToTop = () => {
+    window.scrollTo(0, 0);
+    return null;
+  };
 
 
 class App extends Component {
@@ -24,8 +26,8 @@ class App extends Component {
         return ( 
             <MuiThemeProvider>
             <div>
-                <Route exact path="/" component={Landing} />
-                <Route exact path="/home" component={Home} />
+            <Route component={ScrollToTop} />
+                <Route exact path="/" component={Home} />
                 <Route exact path="/members" component={Members} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />

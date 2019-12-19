@@ -5,6 +5,8 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 
+
+
 const HtmlTooltip = withStyles(theme => ({
   tooltip: {
     backgroundColor: '#f5f5f9',
@@ -23,8 +25,8 @@ class Navbar extends Component {
               <div className="nav-link-box">
 
             <Link to="/" className="nav-h">Home</Link>
-            <Link to="/members" className="nav-h2">Members</Link>
-            <Link to="/recruitment" className="nav-h2">Recruitment</Link>
+            {/* <Link to="/members" className="nav-h2">Members</Link> */}
+            <Link to="/recruitment" className="nav-h2" onUpdate={() => window.scrollTo(0, 0)}>Recruitment</Link>
             {/* <Link to="/news" className="nav-h2">News</Link> */}
             <Link to="/contact" className="nav-h2">Contact Us</Link>
             <Link to="/sales" className="nav-h4">Sales</Link>

@@ -3,6 +3,10 @@
   --black: rgb(12, 12, 5);
 }
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300);
+
+
+
 .App {
   text-align: center;
   display: flex;
@@ -20,6 +24,61 @@
   /* max-width: 1180px; */
   width: 100%;
   
+}
+.App-contact {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  background-color: var(--black);
+  background-image: url(img/bg3.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top center;
+
+  min-height: 1440px;
+  height: 100%;
+  /* max-width: 1180px; */
+  width: 100%;
+}
+
+.contact-h1 {
+  margin-top: 140px;
+  color: white;
+  text-decoration: underline;
+}
+
+.contact-li {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 20px;
+  height: 40px;
+  text-align: center;
+}
+
+.contact-div {
+  text-align: center;
+}
+
+.contact-why {
+  max-width: 600px;
+  margin-top: 110px;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.contact-p {
+  justify-content: center;
+  display: flex;
+  height: 35px;
+  
+}
+
+.contact-img {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
 }
 
 .App-recruitment {
@@ -45,25 +104,25 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-self: center;
   justify-content: center;
   background-color: var(--black);
 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top center;
-
-  min-height: 1440px;
-  height: 100%;
-  /* max-width: 1180px; */
+  /* background-position: top center; */
+  
+  max-height: 2940px !important;
+  /* height: 100%; */
+  max-width: 2270px !important;
   width: 100%;
 }
 
 .landing-arch-container {
-  min-height: 1920px;
-  max-width: 1920px;
-  width: 100%;
+  height: 100%;
+  max-height: 2520px;
   display: flex;
-  flex-direction: row;
+  /* max-width: 1960px;
+  width: 100%;
+  flex-direction: row; */
 }
 
 .landing-img-container {
@@ -72,23 +131,84 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
   max-height: 900px;
+  /* position: relative; */
+}
+
+.landing-left-img{
+  /* margin-top: 25%; */
+  width: 945px !important;
+  height: 100%;
   border-bottom: 2px solid var(--gold);
 }
-/* .landing-right-recruit {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
- 
-  max-height: 900px;
-} */
+.landing-right-img{
+  /* margin-top: 25%; */
+  width: 945px !important;
+  height: 100% !important;
+  border-bottom: 2px solid var(--gold);
+}
+
+
+.landing-inner {
+  width: 50%;
+  left: 0%;
+  position: absolute;
+  justify-items: center;
+}
+
+.landing-inner-left {
+  opacity: 100%;
+}
+
+.left-text {
+  margin-top: -45%;
+  margin-bottom: 35%;
+  font-size: 2.2rem;
+  color: var(--gold);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-align: center;
+}
+.left-button {
+  text-decoration: none;
+  left: 37%;
+  height: 80px;
+  width: 250px;
+  text-decoration-color: white ;
+  font-size: 1.5rem ;
+  border: 0px;
+	transition: all 0.5s;
+  position: relative;
+  border-radius: 15px 50px 30px;
+}
+
+.left-button:hover {
+background-color: black;
+color: var(--gold);
+}
+
+.right-button {
+  text-decoration: none;
+  left: 110%;
+  height: 80px;
+  width: 250px;
+  text-decoration-color: white ;
+  font-size: 1.5rem ;
+  border: 0px;
+	transition: all 0.5s;
+  position: relative;
+  border-radius: 15px 50px 30px;
+}
+
+.right-button:hover {
+background-color: black;
+color: var(--gold);
+}
 
 .recruitment-div {
   display: flex;
   width: 100%;
-  /* margin-left: 5%; */
-  max-width: 1200px;
+  margin-left: 25%;
+  max-width: 1600px;
   justify-self: center;
 }
 
@@ -119,7 +239,7 @@
 
 .recruitment-checkboxes {
 
-  /* max-width: 350px; */
+  max-width: 1600px;
   display: flex;
 justify-content: center;
 margin-bottom: 50px;
@@ -218,7 +338,7 @@ margin-bottom: 50px;
 .nav-h:hover, .nav-h1:hover, .nav-h2:hover, .nav-h3:hover, .nav-h4:hover{
   background: #FFFFFF;
   color: #dfbd00;
-  border-bottom: 2px solid var(--gold);
+  border-bottom: 4px solid var(--gold);
   opacity: 100%;
   /* margin-bottom: -0.6px; */
   cursor: pointer;
@@ -253,7 +373,7 @@ margin-bottom: 50px;
   max-width: 1440px;
   width: 1440px;
   /* flex-direction: row; */
-  justify-self: center;
+  justify-content: space-between;
   /* margin-top:10px; */
   /* padding-top: 10px; */
   padding-bottom: 0px;
