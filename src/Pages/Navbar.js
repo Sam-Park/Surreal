@@ -25,7 +25,8 @@ class Navbar extends Component {
               <div className="nav-link-box">
 
             <Link to="/" className="nav-h">Home</Link>
-            <Link to="/recruitment" className="nav-h2" onUpdate={() => window.scrollTo(0, 0)}>Recruitment</Link>
+            <Link to="/recruitment" className="nav-h2">Recruitment</Link>
+            {/* <Link to="/recruitment" className="nav-h2" onUpdate={() => window.scrollTo(0, 0)}>Recruitment</Link> */}
             <Link to="/contact" className="nav-h2">Contact Us</Link>
             <Link to="/sales" className="nav-h4">Sales</Link>
             <a className="nav-h4" href="https://classic.warcraftlogs.com/guild/us/pagle/surreal" target="_blank" rel="noopener noreferrer">
