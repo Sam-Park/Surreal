@@ -38,7 +38,7 @@ class Contact extends Component {
                 <h1 className="contact-h1">Contact Us</h1>
 
                 <p className="contact-p">
-                    <li className="contact-li">Option 1: &nbsp; Discord 
+                    <li className="contact-li">Option 1: &nbsp; Discord. 
                     </li> 
                 <HtmlTooltip
             title={
@@ -53,9 +53,9 @@ class Contact extends Component {
             </HtmlTooltip>
                   
                 </p>
-                  <li className="contact-li">Option 2: Whisper one of our Members in Game</li>
+                  <li className="contact-li">Option 2: Whisper one of our Members in Game.</li>
                   </div>
-                  <li className="contact-li">For all website related questions, contact Tempesst in game or on discord</li>
+                  <li className="contact-li">For all website related questions, contact Tempesst in game or on discord.</li>
             </div>
          );
     }
