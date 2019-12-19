@@ -56,7 +56,7 @@ class Home extends Component {
       return (
         <div>
           <div className="App">
-      <div className="Top-Container" id="Home">
+      <div className="Top-Container">
 
       <div className="Header">
       <img className="Header-Img" src={SurrealHeader} alt="Header"></img>
