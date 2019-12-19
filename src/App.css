@@ -350,9 +350,9 @@ margin-bottom: 50px;
 .Nav-container {
   display: flex;
   position: fixed;
-  z-index: 3;
+  z-index: 1;
   width: 100%;
-  opacity: 100%;
+  /* opacity: 100%; */
   
   padding-bottom: 0px;
   /* margin-top:10px; */
