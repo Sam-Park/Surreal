@@ -156,9 +156,9 @@
   justify-items: center;
 }
 
-/* .landing-inner-left {
-
-} */
+.landing-inner-left {
+  opacity: 100%;
+}
 
 .left-text {
   margin-top: -45%;
@@ -300,6 +300,7 @@ margin-bottom: 50px;
 
 .nav-h1, .nav-h2, .nav-h3, .nav-h4 {
   display: flex;
+  /* opacity: 0.9; */
   align-items: center;
   justify-content: center;
   margin-top: 1px;
@@ -338,6 +339,7 @@ margin-bottom: 50px;
   background: #FFFFFF;
   color: #dfbd00;
   border-bottom: 4px solid var(--gold);
+  /* opacity: 0.9; */
   /* margin-bottom: -0.6px; */
   cursor: pointer;
   /* -moz-box-shadow:    inset 2px 2px 2px #000000;
@@ -350,7 +352,7 @@ margin-bottom: 50px;
   position: fixed;
   z-index: 1;
   width: 100%;
- 
+  /* opacity: 0.9;   */
   
   padding-bottom: 0px;
   /* margin-top:10px; */
