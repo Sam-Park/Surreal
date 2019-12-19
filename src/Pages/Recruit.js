@@ -23,12 +23,12 @@ function createData(raid, name) {
   }
 
   const rows = [
-    createData(`Onyxia(past or present)`, 'ony'),
-    createData(`Molten Core(past or present)`, 'moltenCore'),
-    createData(`Blackwing Lair(past)`, 'bwl'),
-    createData(`AQ 40(past)`, 'aq40'),
-    createData(`Naxx(past)`, 'naxx'),
-    createData(`Onyxia Attuned(present)`, 'onyAttune'),
+    createData(`Onyxia`, 'ony'),
+    createData(`Molten Core`, 'moltenCore'),
+    createData(`Blackwing Lair`, 'bwl'),
+    createData(`AQ 40`, 'aq40'),
+    createData(`Naxx`, 'naxx'),
+    createData(`Onyxia Attuned`, 'onyAttune'),
 ]
 
 
