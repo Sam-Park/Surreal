@@ -26,17 +26,22 @@ import '../App.css';
     return { item, price, name };
   }
   const rows = [
-    createData(`Dragonstalker's Legguards`, 250, 'dragonstalkerLegs' ),
-    createData(`Giantstalker's Epaulets`, 200, 'giantstalkerShoulders'),
+    createData(`Dragonstalker's Legguards`, 150, 'dragonstalkerLegs' ),
+    createData(`Legplates of Ten Storms`, 150, 'tenStormsLegs'),
     createData(`Nightslayer Shoulder Pads`, 200, 'nightslayerShoulders'),
     createData(`Ancient Petrified Leaf`, 300, 'leaf'),
+    createData(`Eye of Divinity:`, 300, 'eye'),
+    createData(`Most Giantstalker's Pieces`, 100, 'giantStalkers'),
     createData(`Most Earthfury Pieces`, 100, 'earthfury'),
     createData(`Most Cenarion Pieces`, 100, 'cenarion'),
+    createData(`Most Felheart Pieces`, 100, 'felheart'),
+    createData(`Most BoE Set Pieces`, '', 'boe')
   ];
 
   const rows2 = [
     createData(`Stormrage Cover `, 150, 'stormrageCover' ),
-    createData(`Dragonstalker's Helm`, 200, 'dragonStalkerHelm' ),
+    createData(`Dragonstalker's Helm`, 150, 'dragonStalkerHelm' ),
+    createData(`Helmet of Ten Storms`, 150, 'tenStormsHelm'),
     createData(`Mature Black Dragon Sinew`, 100, 'sinew' ),
 ]
   
@@ -44,7 +49,6 @@ import '../App.css';
   class Sales extends Component {
       state = { 
           dragonstalkerLegs: false,
-          giantstalkerShoulders: false,
           nightslayerShoulders: false,
           leaf: false,
           earthfury: '',
@@ -52,6 +56,12 @@ import '../App.css';
           stormrageCover: false,
           dragonStalkerHelm: false,
           sinew: false,
+          tenStormsHelm: false,
+          tenStormsLegs: false,
+          eye: false,
+          giantStalkers: '',
+          felheart: '',
+          boe: '',
           bnet: '',
           open: '',
           openFailedSubmit: '',
@@ -112,15 +122,21 @@ import '../App.css';
             method: 'POST',
             url: `${process.env.REACT_APP_SERVER_URL}api/users/sales`,
             data: {
+                dragonStalkerHelm: this.state.dragonStalkerHelm,
                 dragonstalkerLegs: this.state.dragonstalkerLegs,
-                giantstalkerShoulders: this.state.giantstalkerShoulders,
                 nightslayerShoulders: this.state.nightslayerShoulders,
                 leaf: this.state.leaf,
+                sinew: this.state.sinew,
+                eye: this.state.eye,
                 earthfury: this.state.earthfury,
                 cenarion: this.state.cenarion,
+                felheart: this.state.felheart,
+                giantStalkers: this.state.giantStalkers,
                 stormrageCover: this.state.stormrageCover,
-                dragonStalkerHelm: this.state.dragonStalkerHelm,
-                sinew: this.state.sinew,
+                dragonstalkerLegs: this.state.dragonstalkerLegs,
+                tenStormsLegs: this.state.tenStormsLegs,
+                tenStormsHelm: this.state.tenStormsHelm,
+                boe: this.state.boe,
                 bnet: this.state.bnet,
             }
         })
@@ -155,6 +171,7 @@ import '../App.css';
                         All buyers must be outside the raid when it is time. 
                         We raid on Tuesdays at 9 EST for Molten Core and Onyxia is every 5 days. 
                         Failure to show up will forfeit your deposit.
+                        BoE set piece prices are based on the Auction House and will fluctuate. 
                         </p>
                     </div>
                     <div className="sales-select-items">
@@ -255,6 +272,42 @@ import '../App.css';
                     <TextField  
                     label="Specific Cenarion Item(s)" 
                     name="cenarion" 
+                    variant="outlined"
+                    onChange={this.onChange}
+                    className="sales-earth-cen"
+                    />
+                    </div> : null}
+
+                    {this.state.felheart ? <div className="sales-select-items"> 
+                    <FormLabel className="sales-labels" component="legend">Felheart Items </FormLabel>
+                    
+                    <TextField  
+                    label="Specific Felheart Item(s)" 
+                    name="felheart" 
+                    variant="outlined"
+                    onChange={this.onChange}
+                    className="sales-earth-cen"
+                    />
+                    </div> : null}
+
+                    {this.state.giantStalkers ? <div className="sales-select-items"> 
+                    <FormLabel className="sales-labels" component="legend">Giantstalker Items </FormLabel>
+                    
+                    <TextField  
+                    label="Specific Giantstalker Item(s)" 
+                    name="giantStalkers" 
+                    variant="outlined"
+                    onChange={this.onChange}
+                    className="sales-earth-cen"
+                    />
+                    </div> : null}
+
+                    {this.state.boe ? <div className="sales-select-items"> 
+                    <FormLabel className="sales-labels" component="legend">BoE Items </FormLabel>
+                    
+                    <TextField  
+                    label="Specific BoE Item(s)" 
+                    name="boe" 
                     variant="outlined"
                     onChange={this.onChange}
                     className="sales-earth-cen"
